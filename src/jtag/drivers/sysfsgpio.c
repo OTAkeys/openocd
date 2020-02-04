@@ -135,6 +135,7 @@ static int setup_sysfs_gpio(int gpio, int is_output, int init_high)
 
 	gettimeofday(&timeout, NULL);
 	timeval_add_time(&timeout, 0, 500000);
+	sleep(1);
 
 	snprintf(buf, sizeof(buf), "/sys/class/gpio/gpio%d/direction", gpio);
 	for (;;) {
